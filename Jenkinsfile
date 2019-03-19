@@ -22,3 +22,4 @@ pipeline {
             echo 'This will run only if failed'
         }
  }
+}
