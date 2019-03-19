@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git clone 'https://github.com/YogeshMCA/Spring-Boot-DEV.git'
+                git 'https://github.com/YogeshMCA/Spring-Boot-DEV.git'
             }
         }
     }
