@@ -1,20 +1,24 @@
 pipeline {
-  agent { label 'worker_node1' }
-  stages {
-    stage('Source') { // Get code
-      steps {
-        // get code from our Git repository
-        git 'https://github.com/brentlaster/roarv2'
-      }
+    agent {
+        node {
+            label 'master'
+        }
     }
-    stage('Compile') { // Compile and do unit testing
-      tools {
-        gradle 'gradle4'
-      }
-      steps {
-        // run Gradle to execute compile and unit testing
-        sh 'gradle clean compileJava test'
-      }
+    stages {
+        stage('Clone') {
+            steps {
+                git clone 'https://github.com/YogeshMCA/Spring-Boot-DEV.git'
+            }
+        }
     }
-  }
-}
+    post {
+        always {
+            echo 'This will always run'
+        }
+        success {
+            echo 'This will run only if successful'
+        }
+        failure {
+            echo 'This will run only if failed'
+        }
+ }
