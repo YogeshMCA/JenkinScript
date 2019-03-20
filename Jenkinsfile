@@ -19,7 +19,8 @@ pipeline {
     
     stage('Build') {
             steps {
-                bat 'echo %PATH%'
+                bat 'cd ${C:\\Users\\Admin\\.jenkins\\workspace\\Test01}'
+                bat 'mvn package'
                 }
             }
      }
