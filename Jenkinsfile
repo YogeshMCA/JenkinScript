@@ -19,7 +19,6 @@ pipeline {
     
     stage('Build') {
             steps {
-                bat 'cd ${C:\\Users\\Admin\\.jenkins\\workspace\\Test01}'
                 bat 'mvn package'
                 }
             }
