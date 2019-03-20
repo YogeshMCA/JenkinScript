@@ -18,20 +18,7 @@ pipeline {
         }
     
     
-        stage('Build') {
-            steps {
-                dir(${C:\\Users\\Admin\\.jenkins\\workspace\\Test01}){
-                bat "mvn package"
-                }
-            }
-        }
-        stage('Deployment') {
-            steps {
-                dir(${C:\\Users\\Admin\\.jenkins\\workspace\\Test01}){
-                bat "java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war"
-                }
-            }
-        }
+        
     }
     
     post {
