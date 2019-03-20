@@ -12,7 +12,7 @@ pipeline {
                     credentialsId:'994dba1c-cabc-4d5f-b9d3-8c72366daefb',
                     branch : 'master'                    
                 )
-                git --version
+                
             }
         }
     }
