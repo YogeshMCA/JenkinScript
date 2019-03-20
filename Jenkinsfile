@@ -23,7 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat "cd ${params.PROJ_PATH}"
-                mvn package                
+                bat "mvn package"
             }
         }
     }
