@@ -19,7 +19,7 @@ pipeline {
     
     stage('Build') {
             steps {
-                bat 'mvn -version'
+                bat 'java -version'
                 }
             }
      }
