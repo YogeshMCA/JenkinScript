@@ -5,7 +5,7 @@ pipeline {
         }
     }
     parameters{
-        String(name:'PROJ_PATH',defaultValue:'C:\\Users\\Admin\\.jenkins\\workspace\\Test01',description:'Project Path')
+        string(name:'PROJ_PATH',defaultValue:'C:\\Users\\Admin\\.jenkins\\workspace\\Test01',description:'Project Path')
     }
     stages {
         stage('Clone') {
