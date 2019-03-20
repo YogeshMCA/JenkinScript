@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git clone (
+                git (
                     url: 'https://github.com/YogeshMCA/Spring-Boot-DEV.git',
                     credentialsId:'d1ab25ca-428e-4845-881d-71204dd8c586',
                     branch : 'master'                    
