@@ -26,15 +26,7 @@ pipeline {
             }
         }
     }
-    stages {
-        stage('Deploy') {
-            steps {
-                dir(${C:\\Users\\Admin\\.jenkins\\workspace\\Test01\\target}){
-                bat "java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war"
-                }
-            }
-        }
-    }
+    
     post {
         success {
             echo 'Deployment Completed Successfully'
