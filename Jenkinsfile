@@ -4,6 +4,9 @@ pipeline {
             label 'master'
         }
     }
+    parameters{
+        String(name:'PROJ_PATH',defaultValue:'C:\\Users\\Admin\\.jenkins\\workspace\\Test01',description:'Project Path')
+    }
     stages {
         stage('Clone') {
             steps {
@@ -19,6 +22,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                bat "cd ${params.PROJ_PATH}"
                 mvn package                
             }
         }
@@ -26,7 +30,8 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war
+                bat "cd ${params.PROJ_PATH}/target"
+                bat "java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war"
                 
             }
         }
