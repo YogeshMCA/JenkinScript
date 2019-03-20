@@ -16,15 +16,27 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            echo 'This will always run'
+    stages {
+        stage('Build') {
+            steps {
+                mvn package                
+            }
         }
+    }
+    stages {
+        stage('Deploy') {
+            steps {
+                java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war
+                
+            }
+        }
+    }
+    post {
         success {
-            echo 'This will run only if successful'
+            echo 'Deployment Completed Successfully'
         }
         failure {
-            echo 'This will run only if failed'
+            echo 'Deployment Failed'
         }
  }
 }
