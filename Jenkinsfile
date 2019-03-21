@@ -22,6 +22,14 @@ pipeline {
                 bat 'mvn package'
                 }
             }
+      stage('Deployment') {
+            steps {
+                dir('target'){
+                    bat 'java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war'
+                }
+                }
+            }
+        
      }
         
     post {
