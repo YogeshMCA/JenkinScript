@@ -25,7 +25,9 @@ pipeline {
       stage('Deployment') {
             steps {
                 dir('target'){
+                    timeout(time:1,unit:'MINUTES'){
                     bat 'java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war'
+                    }
                 }
                 }
             }
