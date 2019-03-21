@@ -10,7 +10,7 @@ pipeline {
             steps {
                 git (
                     url: 'https://github.com/YogeshMCA/Dev.git',
-                    credentialsId:'d1ab25ca-428e-4845-881d-71204dd8c586',
+                    credentialsId:'994dba1c-cabc-4d5f-b9d3-8c72366daefb',
                     branch : 'master'                    
                 )
                 
