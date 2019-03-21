@@ -23,6 +23,12 @@ pipeline {
                 }
             }
      }
+    stage('Deployment') {
+            steps {
+                bat 'java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war'
+                }
+            }
+     }
         
     post {
         success {
