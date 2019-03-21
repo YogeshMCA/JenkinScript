@@ -19,12 +19,11 @@ pipeline {
     
     stage('Build') {
             steps {
-                bat 'set MAVEN_HOME=C:\\java cognizant\\apache-maven-3.5.0-bin\\apache-maven-3.5.0'
                 bat 'mvn package'
                 }
             }
      }
-    
+        
     post {
         success {
             echo 'Deployment Completed Successfully'
