@@ -24,6 +24,7 @@ pipeline {
             }
      stage('Deployment') {
             steps {
+                timeout(time:3,unit:'MINUTES'){
                 pushToCloudFoundry(
                             target: 'api.run.pivotal.io',
                             organization: 'Microservices-Samples',
@@ -31,6 +32,7 @@ pipeline {
                             credentialsId: 'PCF_LOGIN'
                             )
                 }
+            }
             }
      }
         
