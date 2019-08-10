@@ -9,7 +9,7 @@ pipeline {
         stage('Clone') {
             steps {
                 git (
-                    url: 'https://github.com/YogeshMCA/Dev.git',
+                    url: 'https://github.com/YogeshMCA/Currency-Conversion-Service---Pivotal.git',
                     credentialsId:'994dba1c-cabc-4d5f-b9d3-8c72366daefb',
                     branch : 'master'                    
                 )
@@ -24,9 +24,12 @@ pipeline {
             }
      stage('Deployment') {
             steps {
-                dir('target'){
-                    bat 'java -jar spring-boot-web-app-0.0.1-SNAPSHOT.war'
-                }
+                pushToCloudFoundry(
+                            target: 'api.run.pivotal.io',
+                            organization: 'Microservices-Samples',
+                            cloudSpace: 'development',
+                            credentialsId: 'PCF_LOGIN'
+                            )
                 }
             }
      }
